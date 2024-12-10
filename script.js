@@ -1,3 +1,4 @@
+//Part 1
 class ProductProperties {
     constructor(name, price, quantity) {
         this.name = name;
@@ -17,3 +18,7 @@ class ProductProperties {
 
 }
 
+let product = new ProductProperties("Apples", 2.50, 50);
+
+product.getTotalValue();
+console.log(product.toString());
