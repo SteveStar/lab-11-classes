@@ -126,3 +126,17 @@ const beef = new PerishableProductProperties("Beef", 1.60, 2, "2024-12-21");
 const rock = new ProductProperties("Rock", 2.10, 4);
 const toy = new ProductProperties("Toy", 1.95, 1);
 const fish = new PerishableProductProperties("Fish", 1.30, 5, "2024-12-22");
+
+newStore.addProduct(lettuce);
+newStore.addProduct(beef);
+newStore.addProduct(rock);
+newStore.addProduct(toy);
+newStore.addProduct(fish);
+
+// Here's the stuff before the discount
+console.log("Total Inventory Value (Before Discount): $" + newStore.getInventoryValue().toFixed(2));
+
+ProductProperties.applyDiscount(newStore.inventory, 0.15);
+
+// And this'll be it after, again for the sake of keeping it relatively consistant
+console.log("Total Inventory Value (After Discount): $" + newStore.getInventoryValue().toFixed(2));
