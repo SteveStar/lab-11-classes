@@ -113,3 +113,16 @@ if (missingProduct) {
 } else {
     console.log("Product not found.");
 }
+
+
+// Part 5
+
+// Making a separate store
+const newStore = new Store();
+
+// New set of products
+const lettuce = new PerishableProductProperties("Lettuce", 1.20, 8, "2024-11-11");
+const beef = new PerishableProductProperties("Beef", 1.60, 2, "2024-12-21");
+const rock = new ProductProperties("Rock", 2.10, 4);
+const toy = new ProductProperties("Toy", 1.95, 1);
+const fish = new PerishableProductProperties("Fish", 1.30, 5, "2024-12-22");
