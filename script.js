@@ -64,7 +64,7 @@ console.log(bread.toString());
 
 class Store {
     constructor() {
-        this.inventory = []; // Array to store products
+        this.inventory = []; // Array to store products 
     }
 
     addProduct(product) {
@@ -93,3 +93,23 @@ const orange = new ProductProperties("Bread", 2.50, 8);
 myStore.addProduct(milk);
 myStore.addProduct(yogurt);
 myStore.addProduct(bread);
+
+console.log("Total Inventory Value: $" + myStore.getInventoryValue().toFixed(2));
+
+// This is to find the product, whichever is actually listed in the list
+const foundProduct = myStore.findProductByName("Yogurt");
+
+// Conditional if its found
+if (foundProduct) {
+    console.log("Found Product:", foundProduct.toString());
+} else {
+    console.log("Product not found.");
+}
+
+// Additional conditional if attempting to find something that doesnt exist
+const missingProduct = myStore.findProductByName("Eggs");
+if (missingProduct) {
+    console.log("Found Product:", missingProduct.toString());
+} else {
+    console.log("Product not found.");
+}
