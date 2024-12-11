@@ -63,3 +63,13 @@ console.log("\nAfter Discount:");
 console.log(milk.toString());
 console.log(yogurt.toString());
 console.log(bread.toString());
+
+// Part 4
+
+class Store {
+    constructor() {
+        this.inventory = []; // Array to store products
+    }
+
+    
+}
