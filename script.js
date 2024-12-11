@@ -45,10 +45,6 @@ class PerishableProductProperties extends ProductProperties {
 
 }
 
-const milk = new PerishableProductProperties("Milk", 1.50, 10, "2024-12-31");
-const yogurt = new PerishableProductProperties("Yogurt", 2.00, 5, "2024-12-25");
-const orange = new ProductProperties("Orange", 2.50, 8);
-
 // this is before the discounts
 console.log("Before Discount:");
 console.log(milk.toString());
@@ -87,3 +83,13 @@ class Store {
         return this.inventory.find(product => product.name === name) || null;
     }
 }
+
+const myStore = new Store();
+
+const milk = new PerishableProductProperties("Milk", 1.50, 10, "2024-12-31");
+const yogurt = new PerishableProductProperties("Yogurt", 2.00, 5, "2024-12-25");
+const orange = new ProductProperties("Bread", 2.50, 8);
+
+myStore.addProduct(milk);
+myStore.addProduct(yogurt);
+myStore.addProduct(bread);
