@@ -40,3 +40,8 @@ class PerishableProductProperties extends ProductProperties {
 const milk = new PerishableProductProperties("Milk", 1.50, 10, "2024-12-31");
 const yogurt = new PerishableProductProperties("Yogurt", 2.00, 5, "2024-12-25");
 
+console.log(milk.toString());
+console.log(yogurt.toString());
+
+milk.getTotalValue();
+yogurt.getTotalValue();
