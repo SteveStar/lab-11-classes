@@ -16,6 +16,15 @@ class ProductProperties {
         return `Product: ${this.name}, Price: $${this.price.toFixed(2)}, Quantity: ${this.quantity}`;
     }
 
+    static applyDiscount(products, discount) {
+        if (discount < 0 || discount > 1) {
+            console.error("Discount must be between 0 and 1.");
+            return;
+        }
+        products.forEach(product => {
+            product.price -= product.price * discount;
+        });
+    }
 }
 
 let product = new ProductProperties("Apples", 2.50, 50);
@@ -24,7 +33,6 @@ product.getTotalValue();
 console.log(product.toString());
 
 // Part 2
-
 class PerishableProductProperties extends ProductProperties {
     constructor(name, price, quantity, expirationDate) {
         super(name, price, quantity); 
@@ -45,3 +53,6 @@ console.log(yogurt.toString());
 
 milk.getTotalValue();
 yogurt.getTotalValue();
+
+// Part 3
+
