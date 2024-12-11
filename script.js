@@ -55,5 +55,11 @@ console.log(milk.toString());
 console.log(yogurt.toString());
 console.log(bread.toString());
 
-milk.getTotalValue();
-yogurt.getTotalValue();
+// the discount is applied
+ProductProperties.applyDiscount([milk, yogurt, orange], 0.1);
+
+// this is after discount
+console.log("\nAfter Discount:");
+console.log(milk.toString());
+console.log(yogurt.toString());
+console.log(bread.toString());
