@@ -18,6 +18,24 @@ class ProductProperties {
 
 }
 
+
+
+
+// Part 2
+
+class PerishableProductProperties extends ProductProperties {
+    constructor(expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+    
+}
+
+
+
+
+
+
 let product = new ProductProperties("Apples", 2.50, 50);
 
 product.getTotalValue();
