@@ -18,6 +18,11 @@ class ProductProperties {
 
 }
 
+let product = new ProductProperties("Apples", 2.50, 50);
+
+product.getTotalValue();
+console.log(product.toString());
+
 // Part 2
 
 class PerishableProductProperties extends ProductProperties {
@@ -26,15 +31,9 @@ class PerishableProductProperties extends ProductProperties {
         this.expirationDate = expirationDate;
     }
 
+    toString() {
+        return `${super.toString()}, Expiration Date: ${this.expirationDate}`;
+    }
 
 }
 
-
-
-
-
-
-let product = new ProductProperties("Apples", 2.50, 50);
-
-product.getTotalValue();
-console.log(product.toString());
