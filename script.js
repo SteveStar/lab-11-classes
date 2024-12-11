@@ -45,6 +45,10 @@ class PerishableProductProperties extends ProductProperties {
 
 }
 
+const milk = new PerishableProductProperties("Milk", 1.50, 10, "2024-12-31");
+const yogurt = new PerishableProductProperties("Yogurt", 2.00, 5, "2024-12-25");
+const bread = new ProductProperties("Bread", 2.50, 8);
+
 // this is before the discounts
 console.log("Before Discount:");
 console.log(milk.toString());
@@ -86,18 +90,18 @@ class Store {
 
 const myStore = new Store();
 
-const milk = new PerishableProductProperties("Milk", 1.50, 10, "2024-12-31");
-const yogurt = new PerishableProductProperties("Yogurt", 2.00, 5, "2024-12-25");
-const orange = new ProductProperties("Bread", 2.50, 8);
+const berry = new PerishableProductProperties("Berry", 1.50, 10, "2024-12-31");
+const tomato = new PerishableProductProperties("Tomato", 2.00, 5, "2024-12-25");
+const orange = new ProductProperties("Orange", 2.50, 8);
 
-myStore.addProduct(milk);
-myStore.addProduct(yogurt);
-myStore.addProduct(bread);
+myStore.addProduct(berry);
+myStore.addProduct(tomato);
+myStore.addProduct(orange);
 
 console.log("Total Inventory Value: $" + myStore.getInventoryValue().toFixed(2));
 
 // This is to find the product, whichever is actually listed in the list
-const foundProduct = myStore.findProductByName("Yogurt");
+const foundProduct = myStore.findProductByName("Tomato");
 
 // Conditional if its found
 if (foundProduct) {
@@ -140,3 +144,13 @@ ProductProperties.applyDiscount(newStore.inventory, 0.15);
 
 // And this'll be it after, again for the sake of keeping it relatively consistant
 console.log("Total Inventory Value (After Discount): $" + newStore.getInventoryValue().toFixed(2));
+
+// Getting the details for a specific product to post it
+const productNameToFind = "Rock";
+
+const locatedProduct = newStore.findProductByName(productNameToFind);
+if (locatedProduct) {
+    console.log(`Found Product: ${locatedProduct.toString()}`);
+} else {
+    console.log(`Product "${productNameToFind}" not found.`);
+}
