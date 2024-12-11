@@ -71,5 +71,19 @@ class Store {
         this.inventory = []; // Array to store products
     }
 
-    
+    addProduct(product) {
+        if (product instanceof ProductProperties) {
+            this.inventory.push(product);
+        } else {
+            console.error("Only instances of ProductProperties or its subclasses can be added.");
+        }
+    }
+
+    getInventoryValue() {
+        return this.inventory.reduce((total, product) => total + product.getTotalValue(), 0);
+    }
+
+    findProductByName(name) {
+        return this.inventory.find(product => product.name === name) || null;
+    }
 }
